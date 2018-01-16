@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>品牌详情</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/adaptation.js"></script>
+		<script type="text/javascript" src="js/resize.js"></script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="activity_management">
+				<span><a href="javascript: history.go(-1);"><img src="img/back.png"/></a></span>
+				<p>品牌名称</p>
+			</div>
+			<div class="activity_management_content necessary_good_things clearfloat">
+				
+				<div class="brand_title">
+					<p><img src="img/brand.jpg"/><span>阿迪达斯</span><span><img src="img/sort_more.png"/></span></p>
+				</div>
+				<div class="brand_content">
+					<p>个的嘎范德萨发生客户付款范德萨噶是范德萨发的是噶是德国队撒发生地方撒回复的客户方式打开方法的时刻发挥上的看法和的康师傅</p>
+				</div>
+				<div class="dividing_line">
+					<span></span>
+					<span>品牌专场</span>
+					<span></span>
+				</div>
+				<ul>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/1.jpg"/>
+							<p>韩国正品Innisfree悦诗风吟</p>
+							<p><span>￥200.00</span><span>￥260</span></p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var fleg = true;
+	$('.brand_title').on('click',function(){
+		fleg = !fleg;
+		if(fleg){
+			$(this).children('p').children('span').children('img').css({'transform':'rotateZ(90deg)'});		
+		}else{
+			$(this).children('p').children('span').children('img').css({'transform':'rotateZ(-90deg)'});
+		}
+		$('.brand_content').slideToggle();
+	})
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分享产品</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/html2canvas.min.js"></script> 
+		<script type="text/javascript" src="js/adaptation.js"></script>
+		<script type="text/javascript" src="js/resize.js"></script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="activity_management">
+				<span><a href="javascript: history.go(-1);"><img src="img/back.png"/></a></span>
+				<p>分享产品</p>
+			</div>
+			
+			<div class="share_product" id="canv">
+				<div class="share_product_head">
+					<img src="img/1.jpg"/>
+					<p>兰蔻「小黑瓶」大眼精华眼霜眼部肌底液20ml淡细纹套装</p>
+					<p>&nbsp;&nbsp;精选商品&nbsp;&nbsp;</p>
+				</div>
+				<div class="share_product_foot">
+					<img src="img/erwm.jpg"/>
+					<p>￥190</p>
+					<p>长按识别二维码，查看详情</p>
+				</div>
+			</div>
+			
+			<div class="share_img">
+				<img src=""/>
+			</div>
+			
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        print();
+    });
+    function print(){
+        html2canvas( $("#canv"),{
+            onrendered: function(canvas){
+                $('.share_img>img').attr('src',canvas.toDataURL());
+                $('.share_product').hide();
+            }
+        });
+    }
+</script> 

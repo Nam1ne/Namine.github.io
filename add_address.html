@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>添加收货地址</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/adaptation.js"></script>
+		<script type="text/javascript" src="js/resize.js"></script>
+	</head>
+	<body>
+		<div class="box">
+			<form action="" method="post">
+				
+				
+				<div class="activity_management">
+					<span><a href="javascript: history.go(-1);"><img src="img/back.png"/></a></span>
+					<p>添加收货地址</p>
+					<span class="save"><input type="submit" value="保存"/></span>
+				</div>
+				
+				<div class="add_address_content">
+					<ul>
+						<li><input class="holders" type="text" name="" id="" value="" placeholder="请输入收货人姓名" /></li>
+						<li><input class="holders" type="text" name="" id="" value="" placeholder="请输入收货人电话" /></li>
+					</ul>
+					
+					<div id="demo1" class="citys">
+						<p><select name="province"></select></p>
+						<p><select name="city"></select></p>
+						<p><select name="area"></select></p>
+						<p><select name="town"></select></p>
+		            </div>
+		            
+		            <input class="holders" type="text" name="" id="" value="" placeholder="请输入详细地址" />
+				</div>
+			
+			</form>
+		</div>
+	</body>
+</html>
+
+
+
+<!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+<script type="text/javascript" src="js/jquery.citys.js"></script>
+<script type="text/javascript">
+	var $town = $('#demo1 select[name="town"]');
+	var townFormat = function(info){
+		$town.hide().empty();
+		if(info['code']%1e4&&info['code']<7e5){	//是否为“区”且不是港澳台地区
+			$.ajax({
+				url:'http://passer-by.com/data_location/town/'+info['code']+'.json',
+				dataType:'json',
+				success:function(town){
+					$town.show();
+					for(i in town){
+							$town.append('<option value="'+i+'">'+town[i]+'</option>');
+					}
+				}
+			});
+		}
+	};
+    $('#demo1').citys({
+		province:'广东省',
+		city:'广州市',
+		area:'天河区',
+		onChange:function(info){
+			townFormat(info);
+		}
+	},function(api){
+		var info = api.getInfo();
+		townFormat(info);
+	});
+</script>

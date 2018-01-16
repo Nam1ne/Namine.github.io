@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.wrap{
+				width: 600px;
+				height: 200px;
+				background: red;
+				margin: 50px auto;
+				position: relative;
+				z-index: 20;
+				overflow: hidden;
+			}
+			.list{
+				width: 10000px;
+			}
+			.list>li{
+				list-style: none;
+				width: 600px;
+				height: 200px;
+				float: left;
+				background: green;
+				margin-right: 30px;
+			}
+			.list>li>ul>li{
+				list-style: none;
+				float: left;
+				background: blue;
+				width: 180px;
+				height: 200px;
+				margin-right: 30px;
+			}
+			.list>li>ul>li:last-child{
+				margin-right: 0px;
+			}
+		</style>
+		<script type="text/javascript" src="js/swipe.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+			</ul>
+			
+			
+			<ul class="spot">
+				<li class="actives"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var wrap = document.getElementsByClassName('wrap')[0];
+	var list = document.getElementsByClassName('list')[0];	
+	
+	
+	var nav  = document.getElementsByClassName('spot')[0];
+	var ls = nav.getElementsByTagName('li');
+	
+	var width = wrap.offsetWidth;
+	list.innerHTML += list.innerHTML;
+	var lis = list.getElementsByTagName('li');
+	var num = 0;
+	var timer = null;
+	
+	
+	
+	for(var i=0;i<ls.length;i++){
+		ls[i].index  =i;
+		ls[i].onclick = function(){	
+			if(this.index > num){
+				list.style.transition = "none";
+				list.style.top = -(this.index - 1)*width + 'px';
+				var that = this;
+				setTimeout(function(){
+					num = that.index;
+					list.style.transition = ".5s";
+					list.style.top = -num*width + 'px';
+				},20);
+			}
+		}
+	}
+	function fnLeft(){
+		num++;
+		if(num > 5){
+			list.style.top = 0 +'px';                    // 瞬间拉回到原来位置
+			list.style.transition = 'none';	              //改变transition值，时位置变化时没有运动效果。
+			num  = 0;
+			setTimeout(function(){                        // 延迟器，变到原位置后在进行下一步变化
+				list.style.transition = "1s";
+				num = 1;	
+				tab();
+			},20);	
+		}else{
+			tab();	
+		}		
+	}
+	function fnRight(){
+		num--;
+		if(num <0){
+			num = 6;
+			list.style.transition = "none";
+			list.style.top = -5*width +'px';
+			setTimeout(function(){
+				num = 4;
+				list.style.transition = "1s";
+				tab();
+			},20)
+		}else{
+			tab();
+		}
+	}
+	function tab(){
+		for(var i=0;i<ls.length;i++){
+				ls[i].className = '';
+		}
+		ls[num%ls.length].className ="actives";
+		list.style.top = -num * width +'px';
+	}
+	function getCss(obj,attrs){
+		if(obj.currentStyle == undefined){
+			return parseInt(getComputedStyle(obj)[attrs]);
+		}else{
+			return parseInt(obj.currentStyle[attrs]);
+		}	
+	}
+	
+	
+	var timer = null;
+	timer = setInterval(function(){
+		fnLeft();
+	},3000)
+	
+	swipe(wrap,'left',fnLeft);
+	swipe(wrap,'right',fnRight);
+
+</script>

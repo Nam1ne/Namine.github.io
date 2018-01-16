@@ -1,0 +1,232 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+input[type=button],input[type=submit],input[type=file],button{ 
+	cursor: pointer !important;
+	-webkit-appearance: none !important;
+}
+
+/*改变placeholder字体颜色*/
+.holder::-webkit-input-placeholder { /* WebKit browsers */
+	color:#b8b6c3;
+}
+.holder:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:#b8b6c3;
+}
+.holder::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:#b8b6c3;
+}
+.holder:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:#b8b6c3;
+}
+body{
+	width: 30rem;
+	height: 53.36rem;
+	background: url(../img/未标题-2.jpg) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.bg{
+	width: 30rem;
+	height: 53.36rem;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	background: rgba(61,58,69,0.5);
+	/*background: url(../img/未标题-3.jpg) no-repeat 0 0;
+	background-size: 100% 100%;*/
+	/*float: left;
+	filter: blur(10px);*/
+}
+
+.box{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 20;
+	/*width: 30rem;
+	height: 53.36rem;
+	background: url(../img/未标题-3.jpg) no-repeat 0 0;
+	background-size: 100% 100%;*/
+	/*padding-top: 2.52rem;*/
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.box .head{
+	width: 30rem;
+	height: 3.52rem;
+	position: relative;
+}
+.box .head>img{
+	width: 1.68rem;
+	height: 1.68rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	right: 1rem;
+}
+
+.head_portrait{
+	width: 100%;
+	height: 9.88rem;
+	position: relative;
+	margin-top: 1rem;
+}
+.head_portrait .logo{
+	width: 6.56rem;
+	height: 6.56rem;
+	border-radius: 0.5rem;
+	background: #ceccd9;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.head_portrait .logo img{
+	width: 100%;
+	height: 100%;
+	border-radius: 0.5rem;
+}
+.head_portrait>span{
+	position: absolute;
+	top: 8.5rem;
+	font-size: 1.2rem;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+}
+.user{
+	width: 100%;
+	height: 10.04rem;
+	position: relative;
+	margin-top: 6rem;
+}
+.user p{
+	height: 2.28rem;
+	font-size: 1.12rem;
+	position: relative;
+}
+.user p span{
+	display: none;
+	position: absolute;
+	top: 2.28rem;
+	left: 4rem;
+	width: 24rem;
+	height: 1rem;
+	color: red;
+	padding-left: 1rem;
+	box-sizing: border-box;
+	font-size: 1rem;
+}
+.user p label{
+	float: left;
+	margin-left: 1.6rem;
+	margin-top: 0;
+	width: 1.8rem;
+	height: 1.8rem;
+	background: url(../img/user&password@2x.png.png) no-repeat;
+	background-position: -0.1rem -0.1rem;
+	background-size: 4rem 4rem;
+}
+.user p:first-child label{
+	background-position: -0.1rem -0.1rem;
+}
+.user p:nth-of-type(2) label{
+	background-position: -2.24rem -0.1rem;
+}
+.user p input{
+	width: 24.08rem;
+	height: 2.28rem;
+	float: right;
+	line-height: 2rem;
+	font-size: 1.12rem;
+	margin-right: 1.6rem;
+	padding-left: 0.5rem;
+	outline: none;
+	border: none;
+	background: none;
+	border-bottom: 1px solid #b8b6c1;
+	color: #eaecf3;
+	box-sizing: border-box;
+}
+.user p:first-child{
+	margin-bottom: 3.04rem;
+}
+.user>p:last-child{
+	width: 100%;
+	height: 0.92rem;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-top: 1.6rem;
+}
+.user>p:last-child>a{
+	text-decoration: none;
+	display: block;
+	width: 4.68rem;
+	height: 0.92rem;
+	font-size: 0.92rem;
+	text-align: center;
+	line-height: 0.92rem;
+	position: absolute;
+	top: 0;
+	right: 1.56rem;
+	color: #eaecf3;
+	word-spacing: 0.8rem;
+	/*font-family: '苹方字体';*/
+}
+.login{
+	width: 100%;
+	height: 3.52rem;
+	margin-top: 3rem;
+	position: relative;
+}
+.login>input{
+	width: 26.8rem;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 3.52rem;
+	background: #83d2d7;
+	outline: none;
+	border: none;
+	color: #fff;
+	text-align: center;
+	line-height: 3.52rem;
+	font-size: 1.12rem;
+}
+.foot{
+	width: 100%;
+	height: 5.76rem;
+	margin-top: 3.88rem;
+}
+.foot>ul>li{
+	list-style: none;
+	width: 4.12rem;
+	height: 5.76rem;
+	margin-left: 7.24rem;
+	float: left;
+	position: relative;
+}
+.foot>ul>li img{
+	width: 3.92rem;
+	height: 3.92rem;
+	border-radius: 3.92rem;
+}
+.foot>ul>li span{
+	position: absolute;
+	left: 0;
+	bottom: 0.8rem;
+	text-align: cneter;
+	width: 100%;
+	height: 0.96rem;
+	font-size: 0.96rem;
+	color: #eaecf3;
+}

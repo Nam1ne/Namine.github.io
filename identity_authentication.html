@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>身份认证</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/adaptation.js"></script>
+		<script type="text/javascript" src="js/resize.js"></script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="activity_management">
+				<span><a href="javascript: history.go(-1);"><img src="img/back.png"/></a></span>
+				<p>身份认证</p>
+			</div>
+			<ul class="login_password authentication">
+				<li>
+					<input class="holders" type="text" name="" id="" value="" placeholder="请输入身份证号码" />
+				</li>
+				<li>
+					<input class="holders" type="text" name="" id="" value="" placeholder="请输入您的姓名" />
+				</li>
+				<li>
+					<span><a href="">确认</a></span>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="prompt_window">
+			<div class="prompt_window_content">
+				<p>身份证号码与姓名不匹配，请重新输入</p>
+				<p>确认</p>
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	(function($){
+		$('.prompt_window p:nth-of-type(2)').on('click',function(){
+			$('.prompt_window').css({'display':'none'});
+		})
+	})(jQuery)
+</script>
